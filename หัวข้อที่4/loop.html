@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Loop Algorithms</h1>
+        <div>
+            <h2>For Loop</h2>
+            <button onclick="displayNumbers()">Display Numbers 1-10</button>
+            <ul id="numberList"></ul>
+        </div>
+        <div>
+            <h2>While Loop</h2>
+            <button onclick="startWhileLoop()">Start While Loop</button>
+        </div>
+    </div>
+    <script src="loop.js"></script>
+    <script>
+        function displayNumbers() {
+            const numberList = document.getElementById("numberList");
+            numberList.innerHTML = "";
+            for (let i = 1; i <= 10; i++) {
+                const listItem = document.createElement("li");
+                listItem.innerText = i;
+                numberList.appendChild(listItem);
+            }
+        }
+
+        function startWhileLoop() {
+            let input;
+            while (input !== "exit") {
+                input = prompt("Enter a value (type 'exit' to quit):");
+                console.log(input);
+            }
+        }
+    </script>
+</body>
+</html>

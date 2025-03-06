@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conditional Algorithms</h1>
+        <div>
+            <h2>Age Category</h2>
+            <label for="age">Age: </label>
+            <input type="number" id="age" placeholder="Enter age">
+            <button onclick="showAgeCategory()">Check Category</button>
+            <h3 id="ageResult"></h3>
+        </div>
+
+        <div>
+            <h2>เลขคู่หรือคี่</h2>
+            <label for="number">Number: </label>
+            <input type="number" id="number" placeholder="Enter number">
+            <button onclick="showEvenOdd()">Check Even/Odd</button>
+            <h3 id="numberResult"></h3>
+        </div>
+    </div>
+    <script src="conditional.js"></script>
+    <script>
+        function showAgeCategory() {
+            const age = parseInt(document.getElementById("age").value);
+            const result = determineAgeCategory(age);
+            document.getElementById("ageResult").innerText = `Category: ${result}`;
+        }
+
+        function showEvenOdd() {
+            const number = parseInt(document.getElementById("number").value);
+            const result = checkEvenOdd(number);
+            document.getElementById("numberResult").innerText = `Result: ${result}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sorting Algorithms</h1>
+        <button onclick="generateArray()">Generate Array</button>
+        <button onclick="sortArray('bubble')">Bubble Sort</button>
+        <button onclick="sortArray('selection')">Selection Sort</button>
+        <h2>Unsorted Array</h2>
+        <pre id="unsortedArray" style="white-space: pre-wrap;"></pre>
+        <h2>Bubble Sort Result</h2>
+        <pre id="bubbleSortedArray" style="white-space: pre-wrap;"></pre>
+        <h2>Selection Sort Result</h2>
+        <pre id="selectionSortedArray" style="white-space: pre-wrap;"></pre>
+    </div>
+    <script src="sorting.js"></script>
+    <script>
+        let unsortedArray = [];
+
+        function generateArray() {
+            unsortedArray = Array.from({ length: 100 }, () => Math.floor(Math.random() * 100));
+            document.getElementById("unsortedArray").innerText = JSON.stringify(unsortedArray);
+            document.getElementById("bubbleSortedArray").innerText = "";
+            document.getElementById("selectionSortedArray").innerText = "";
+        }
+
+        function sortArray(method) {
+            let sortedArray;
+            if (method === 'bubble') {
+                sortedArray = bubbleSort([...unsortedArray]);
+                document.getElementById("bubbleSortedArray").innerText = JSON.stringify(sortedArray);
+            } else if (method === 'selection') {
+                sortedArray = selectionSort([...unsortedArray]);
+                document.getElementById("selectionSortedArray").innerText = JSON.stringify(sortedArray);
+            }
+        }
+    </script>
+</body>
+</html>

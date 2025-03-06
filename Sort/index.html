@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        button { margin: 5px; padding: 10px; cursor: pointer; }
+        pre { background: #f4f4f4; padding: 10px; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <h2>Sorting Algorithm (Bubble Sort & Selection Sort)</h2>
+    
+    <button onclick="generateRandomArray()">สุ่มตัวเลข</button>
+    <button onclick="sortArray('bubble')">Bubble Sort</button>
+    <button onclick="sortArray('selection')">Selection Sort</button>
+
+    <h3>ข้อมูลก่อนเรียง:</h3>
+    <pre id="originalArray">ยังไม่มีข้อมูล</pre>
+
+    <h3>ข้อมูลหลังเรียง:</h3>
+    <pre id="sortedArray">ยังไม่มีข้อมูล</pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

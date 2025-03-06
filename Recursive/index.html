@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ฟังก์ชัน Factorial และ Fibonacci</title>
+</head>
+<body>
+  <h1>ฟังก์ชัน Factorial และ Fibonacci</h1>
+  
+  <div>
+    <h2>คำนวณแฟกทอเรียล</h2>
+    <label for="factorialInput">กรอกหมายเลขเพื่อคำนวณแฟกทอเรียล:</label>
+    <input type="number" id="factorialInput" />
+    <button onclick="calculateFactorial()">คำนวณ</button>
+    <p>ผลลัพธ์แฟกทอเรียล: <span id="factorialResult"></span></p>
+  </div>
+
+  <div>
+    <h2>คำนวณลำดับ Fibonacci</h2>
+    <label for="fibonacciInput">กรอกหมายเลขเพื่อคำนวณ Fibonacci:</label>
+    <input type="number" id="fibonacciInput" />
+    <button onclick="calculateFibonacci()">คำนวณ</button>
+    <p>ผลลัพธ์ Fibonacci: <span id="fibonacciResult"></span></p>
+  </div>
+
+  <script>
+    function factorial(n) {
+      if (n === 0 || n === 1) {
+        return 1;
+      }
+      return n * factorial(n - 1);
+    }
+
+    function fibonacci(n) {
+      if (n === 0) {
+        return 0;
+      }
+      if (n === 1) {
+        return 1;
+      }
+      return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+
+    function calculateFactorial() {
+      const n = parseInt(document.getElementById("factorialInput").value);
+      const result = factorial(n);
+      document.getElementById("factorialResult").textContent = result;
+    }
+
+
+    function calculateFibonacci() {
+      const n = parseInt(document.getElementById("fibonacciInput").value);
+      const result = fibonacci(n);
+      document.getElementById("fibonacciResult").textContent = result;
+    }
+  </script>
+</body>
+</html>

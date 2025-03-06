@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging & Error Handling</title>
+</head>
+<body>
+    <h1>ทดสอบ Debugging & Error Handling</h1>
+    <button onclick="testDebugging()">ทดสอบ Debugging</button>
+    <button onclick="testErrorHandling()">ทดสอบ Error Handling</button>
+
+    <script>
+        function testDebugging() {
+            let a = 10;
+            let b = 5;
+            console.log('ค่า a:', a);  
+            console.log('ค่า b:', b);  
+            let result = a + b;
+            console.log('ผลรวมของ a และ b:', result);  
+        }
+
+        function testErrorHandling() {
+            try {
+                let jsonString = '{"name": "John", "age": 30}'; 
+                let parsedData = JSON.parse(jsonString);
+                console.log('ข้อมูลที่แปลงแล้ว:', parsedData);
+                
+                let invalidJsonString = '{"name": "John", "age": }'; 
+                let parsedInvalidData = JSON.parse(invalidJsonString); 
+                console.log('ข้อมูลที่แปลงแล้ว:', parsedInvalidData);
+            } catch (error) {
+                console.error('เกิดข้อผิดพลาด:', error.message);  
+            } finally {
+                console.log('การทดสอบเสร็จสิ้น');  
+            }
+        }
+    </script>
+</body>
+</html>

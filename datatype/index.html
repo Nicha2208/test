@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตัวอย่าง JavaScript</title>
+</head>
+<body>
+    <h1>ตัวอย่าง JavaScript: ตัวแปร, โครงสร้างข้อมูล, JSON</h1>
+    
+    <h2>1. ตัวแปรและการแปลงชนิดข้อมูล</h2>
+    <button onclick="showVariables()">แสดงผลตัวแปร</button>
+    <p id="variablesOutput"></p>
+
+    <h2>2. โครงสร้างข้อมูล (List, Object, Tuple, Set)</h2>
+    <button onclick="showDataStructures()">แสดงผลโครงสร้างข้อมูล</button>
+    <p id="dataStructuresOutput"></p>
+
+    <h2>3. การจัดการกับ JSON</h2>
+    <button onclick="showJSON()">แสดงผล JSON</button>
+    <p id="jsonOutput"></p>
+
+    <script>
+        
+        function showVariables() {
+            let myString = "Hello, World!";
+            let myInteger = 10;
+            let myBoolean = true;
+
+            let convertedInt = parseInt("10");    
+            let convertedFloat = parseFloat("3.14"); 
+            let convertedStr = String(100);  
+
+            const output = `
+                <strong>String:</strong> ${myString}<br>
+                <strong>Integer:</strong> ${myInteger}<br>
+                <strong>Boolean:</strong> ${myBoolean}<br>
+                <strong>Converted Integer:</strong> ${convertedInt}<br>
+                <strong>Converted Float:</strong> ${convertedFloat}<br>
+                <strong>Converted String:</strong> ${convertedStr}
+            `;
+            console.log("Type of Converted Integer:", typeof convertedInt);
+            console.log("Type of Converted Float:", typeof convertedFloat);
+            console.log("Type of Converted String:", typeof convertedStr);
+            console.log("Type of Converted myBoolean:", typeof myBoolean);
+            
+            document.getElementById("variablesOutput").innerHTML = output;
+        }
+
+        
+        function showDataStructures() {
+            
+            let myArray = [1, 2, 3, 4, 5];
+            myArray.push(6);
+            myArray.splice(2, 1);  
+            myArray[1] = 10; 
+
+            
+            let student = {
+                "name": "Tom",
+                "age": 20,
+                "grade": "A"
+            };
+            student.age = 21; 
+
+           
+            let mySet = new Set([1, 2, 3, 2, 3]);
+            mySet.add(4);
+
+            const output = `
+                <strong>Array:</strong> ${myArray.join(', ')}<br>
+                <strong>Object:</strong> Name: ${student.name}, Age: ${student.age}, Grade: ${student.grade}<br>
+                <strong>Set:</strong> ${[...mySet].join(', ')}
+            `;
+            document.getElementById("dataStructuresOutput").innerHTML = output;
+        }
+
+      
+        function showJSON() {
+          
+            let jsonString = '{"name": "Tom", "age": 20, "grade": "A"}';
+            let jsonObject = JSON.parse(jsonString); 
+
+            let newJsonString = JSON.stringify(jsonObject);
+
+            const output = `
+                <strong>JSON Object:</strong> ${JSON.stringify(jsonObject, null, 2)}<br>
+                <strong>JSON String:</strong> ${newJsonString}
+            `;
+            document.getElementById("jsonOutput").innerHTML = output;
+        }
+    </script>
+</body>
+</html>

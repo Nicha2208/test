@@ -7,7 +7,6 @@ function generateLotteryNumber() {
 const lotteryNumber = generateLotteryNumber();
 console.log("เลขหวยที่ออก:", lotteryNumber);
 
-// ฟังก์ชันตรวจสอบเลขหวย
 function checkLottery() {
     const userInput = document.getElementById("userGuess").value;
     const resultText = document.getElementById("result");
@@ -15,11 +14,10 @@ function checkLottery() {
     // ตรวจสอบว่ากรอกเป็นตัวเลข 6 หลักหรือไม่
     if (!/^\d{6}$/.test(userInput)) {
         resultText.style.color = "red";
-        resultText.textContent = "⚠️ กรุณากรอกตัวเลข 6 หลัก!";
+        resultText.textContent = "กรุณากรอกตัวเลข 6 หลัก!";
         return;
     }
 
-    // ตรวจผล
     if (parseInt(userInput) === lotteryNumber) {
         resultText.style.color = "green";
         resultText.textContent = `🎉 ยินดีด้วย! คุณถูกรางวัล เลขที่ออกคือ ${lotteryNumber}`;
